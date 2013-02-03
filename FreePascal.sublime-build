@@ -1,0 +1,10 @@
+{      
+    // This build system will build your pp file to exe file and will run it
+    "cmd": ["del ${file/\\.pp/\\.exe/} 2>NUL", "& fpc $file", "& ${file/\\.pp/\\.exe/}"],
+    "file_regex": "^(...*?)[(]([0-9]*),([0-9]*)[)]",
+    // By default csc is not in your PATH, so add it to your path
+    // or uncomment "path" and check that it has correct value
+    //"path": "C:/FPC/2.60/bin/i386-win32",
+    "shell": true, // Without this sublime has hard times to parse "&" in out command line
+    "selector": "source.pp"
+ }
